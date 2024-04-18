@@ -16,9 +16,11 @@ class Restaurante:
     
     def listar_restaurantes():
         
+        print(f'{'Nome do restaurante'.ljust(20)} | {'Categoria'.ljust(20)} | Status')
+        
         for restaurante in Restaurante.restaurantes:
             
-            print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.status}')
+            print(f'{restaurante.nome.ljust(20)} | {restaurante.categoria.ljust(20)} | {restaurante.status}')
             
     @property #muda como o atributo será lido
     def status(self):
