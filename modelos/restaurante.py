@@ -6,7 +6,7 @@ class Restaurante:
         
         self.nome = nome
         self.categoria = categoria
-        self.status = False
+        self._status = False #Private
         
         Restaurante.restaurantes.append(self)
         
@@ -19,6 +19,11 @@ class Restaurante:
         for restaurante in Restaurante.restaurantes:
             
             print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.status}')
+            
+    @property #muda como o atributo será lido
+    def status(self):
+        
+        return '☑' if self._status else '☒'
     
 
 pizzaria = Restaurante('Dom Corneone', 'Massa')
@@ -36,4 +41,3 @@ Restaurante.listar_restaurantes()
 #show attributes format dic
 #print(vars(pizzaria))
 
-print(pizzaria)
